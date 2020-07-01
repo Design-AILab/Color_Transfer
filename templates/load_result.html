@@ -1,0 +1,35 @@
+<!doctype html>
+<title>Python Flask File Upload Example</title>
+<h2>Select a file to upload</h2>
+<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul class=flashes>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
+{% if input_filename %}
+    <h3>Input Image</h3>
+	<div>
+		<img src="{{ url_for('display_image', filename=input_filename) }}">
+	</div>
+
+    <h3>Palette</h3>
+	<div>
+        Color 1: <input type="color" id="fav-color-1" name="fav-color-1" value='#2D1421' disabled><br/>
+        Color 2: <input type="color" id="fav-color-2" name="fav-color-2" value='#FBFBFB' disabled><br/>
+        Color 3: <input type="color" id="fav-color-3" name="fav-color-3" value='#793E5F' disabled><br/>
+        Color 4: <input type="color" id="fav-color-4" name="fav-color-4" value='#51545A' disabled><br/>
+        Color 5: <input type="color" id="fav-color-5" name="fav-color-5" value='#6F7885' disabled><br/>
+        Color 6: <input type="color" id="fav-color-6" name="fav-color-6" value='#D9BECC' disabled><br/>
+    </div>
+
+    <h3>Transformed Image</h3>
+	<div>
+		<img src="{{ url_for('display_image', filename=result_filename) }}">
+	</div>
+{% endif %}
