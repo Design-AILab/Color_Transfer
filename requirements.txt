@@ -6,5 +6,5 @@ opencv_python==4.1.2.30
 matplotlib==3.2.1
 torch==1.4.0
 torchvision==0.5.0
-Werkzeug==0.15.4
+Werkzeug==0.15.5
 skimage==0.0
